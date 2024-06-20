@@ -1,0 +1,19 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+         // Ensure k is within the bounds of the array length
+        k = k % nums.length;
+
+        // Create a temporary array to store rotated elements
+        int[] arr = new int[nums.length];
+        
+        // Rotate the elements
+        for (int i = 0; i < nums.length; i++) {
+            arr[(i + k) % nums.length] = nums[i];
+        }
+        
+        // Copy the rotated elements back to the original array
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = arr[i];
+        }
+    }
+    }
